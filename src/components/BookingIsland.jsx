@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeftIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
 const industries = [
-  'Beauty Salon', 'Tattoo Studio', 'Restaurant', 'Retail Store', 
+  'Beauty Salon', 'Software/SaaS', 'Restaurant', 'Retail Store', 
   'Manufacturing', 'Service Business', 'Healthcare', 'Education', 'Other'
 ];
 
