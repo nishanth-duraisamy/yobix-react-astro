@@ -14,7 +14,7 @@ function AboutUsComponent() {
     },
     {
       title: 'Seamless Integration',
-      description: 'Connect to database clusters, cloud warehouses, and API streams in minutes without custom engineering.'
+      description: 'Connect to your existing business workflows, operational goals, and team pipelines in minutes.'
     }
   ];
 
@@ -27,7 +27,7 @@ function AboutUsComponent() {
             Our Mission
           </h1>
           <p className='mt-4 max-w-2xl mx-auto text-lg text-text-muted'>
-            Empowering modern enterprises with sub-second analytical visibility. We translate complex data streams into intuitive business decisions.
+            Empowering modern businesses with clear strategic visibility. We translate complex business challenges into intuitive, actionable decisions.
           </p>
         </div>
 
@@ -38,10 +38,10 @@ function AboutUsComponent() {
               The Story Behind Yobix
             </h2>
             <p className='text-text-muted leading-relaxed'>
-              Founded in Coimbatore, Yobix arose from a simple realization: modern enterprises are swimming in data but starving for insights. Traditional BI architectures require hours to sync, leaving decision-makers looking in the rearview mirror.
+              Founded in Coimbatore, Yobix arose from a simple realization: modern enterprises are swimming in metric spreadsheets but starving for growth. Traditional strategies lack real-time feedback, leaving decision-makers guessing about their next step.
             </p>
             <p className='text-text-muted leading-relaxed'>
-              Yobix built a state-of-the-art columnar analytics engine capable of aggregating petabyte-scale datasets on the fly. Today, we power dashboarding, automated alerts, and predictive modeling for high-growth startups and legacy corporations alike.
+              Yobix built a state-of-the-art business growth framework capable of identifying operational leaks on the fly. Today, we power growth diagnostics, automated workflow insights, and strategic modeling for high-growth startups and established corporations alike.
             </p>
           </div>
           <div className='lg:w-5/12 flex justify-center'>
@@ -53,9 +53,9 @@ function AboutUsComponent() {
                   src='/logo.webp'
                   alt='Yobix Platform Logo'
                 />
-                <h3 className='text-xl font-bold text-text-main mb-2 font-display'>Yobix BI Suite</h3>
+                <h3 className='text-xl font-bold text-text-main mb-2 font-display'>Yobix Framework</h3>
                 <p className='text-sm text-text-muted'>
-                  Architected for sub-second database querying and predictive modeling.
+                  Architected for business diagnostics and strategic modeling.
                 </p>
               </div>
             </div>
