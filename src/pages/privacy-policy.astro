@@ -1,0 +1,90 @@
+---
+// src/pages/privacy-policy.astro
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "Privacy Policy & Disclaimers | Yobix";
+const description = "Privacy Policy and growth disclaimers for Yobix (OPC) Private Limited. Learn how we handle your data and our platform terms.";
+---
+
+<MainLayout title={title} description={description} fullWidth={true}>
+    <div class="bg-background text-text-main py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto space-y-8 animate-fade-in">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl font-display text-primary">
+                    Privacy Policy & Growth Disclaimers
+                </h1>
+                <p class="mt-3 text-text-muted text-base">
+                    Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+            </div>
+
+            <div class="bg-secondary/45 border border-white/5 rounded-2xl p-8 space-y-6 shadow-xl leading-relaxed text-text-muted text-sm sm:text-base">
+                <section class="space-y-3">
+                    <h2 class="text-xl font-bold font-display text-text-main">1. Business Growth & Income Disclaimer</h2>
+                    <p>
+                        Yobix (OPC) Private Limited provides data analytics, diagnostic tools, and advisory services designed to support and optimize your business operations, metrics tracking, and overall organizational growth.
+                    </p>
+                    <p class="font-semibold text-accent border-l-2 border-accent pl-4 italic">
+                        Important Note: We offer tools and insights to assist with decision-making and operational efficiency. Yobix does not make any promises, guarantees, or assurances of making money, achieving specific profit margins, or securing any financial return. Any success depends entirely on your own implementation, execution, and external market factors.
+                    </p>
+                </section>
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-bold font-display text-text-main">2. Data We Collect</h2>
+                    <p>
+                        When you use our Free Business Diagnosis Tool or contact us, we may collect:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Information you voluntarily input (such as your industry type, business challenges, and operational answers).</li>
+                        <li>Contact information (such as your email address or phone number when you request support).</li>
+                        <li>Basic usage and telemetry analytics to help us improve the platform's query rendering speed and usability.</li>
+                    </ul>
+                </section>
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-bold font-display text-text-main">3. How We Use Your Data</h2>
+                    <p>
+                        We use the information we collect to:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Calculate and generate your Business Health Scorecard.</li>
+                        <li>Provide operational support, technical answers, and consultation.</li>
+                        <li>Maintain, optimize, and secure the Yobix Business Intelligence platform.</li>
+                    </ul>
+                </section>
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-bold font-display text-text-main">4. Security of Data</h2>
+                    <p>
+                        The security of your operational metrics and diagnostic answers is extremely important to us. We employ industry-standard encryption, firewall safeguards, and access control policies to prevent unauthorized access, alteration, or disclosure.
+                    </p>
+                </section>
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-bold font-display text-text-main">5. Cookies & Analytics</h2>
+                    <p>
+                        Yobix uses cookies to save your user interface preferences (such as light/dark mode selection) and analyze visitor traffic patterns. You can disable cookies through your browser settings, though doing so might affect certain persistent preferences on the site.
+                    </p>
+                </section>
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-bold font-display text-text-main">6. Changes to this Policy</h2>
+                    <p>
+                        We reserve the right to modify this Privacy Policy and Disclaimers statement at any time. Any changes will be posted on this page with an updated modification date.
+                    </p>
+                </section>
+
+                <section class="space-y-3 pt-6 border-t border-white/5">
+                    <h2 class="text-xl font-bold font-display text-text-main">7. Contact Information</h2>
+                    <p>
+                        If you have questions regarding this Privacy Policy or our operational growth support services, please contact us:
+                    </p>
+                    <div class="space-y-1.5 font-mono text-sm pt-2">
+                        <p>Email: <a href="mailto:info@yobix.in" class="text-primary hover:underline">info@yobix.in</a></p>
+                        <p>Address: 22b, Kongu nagar, kalveerampalayam, coimbatore - 641046</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</MainLayout>

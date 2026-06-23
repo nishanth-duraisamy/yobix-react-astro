@@ -15,7 +15,7 @@ const Footer = () => {
                         </div>
                         <div className='flex items-center space-x-2 text-text-muted hover:text-text-main transition-colors duration-200'>
                             <EnvelopeIcon className='h-5 w-5 text-accent' />
-                            <a id='email' href='mailto:info@yobix.in'>
+                            <a id='email' href='mailto:info@yobix.in' target='_blank' rel='noopener noreferrer'>
                                 info@yobix.in
                             </a>
                         </div>
@@ -46,8 +46,12 @@ const Footer = () => {
                     </div>
                     <div className='text-left md:text-right text-text-muted text-sm space-y-1'>
                         <p className='font-semibold text-text-main font-display'>Yobix (OPC) Private Limited</p>
-                        <p>
-                            &copy; {new Date().getFullYear()} Yobix. All Rights Reserved.
+                        <p className='flex flex-wrap md:justify-end gap-x-3 gap-y-1 items-center'>
+                            <span>&copy; {new Date().getFullYear()} Yobix. All Rights Reserved.</span>
+                            <span className='hidden sm:inline opacity-30'>|</span>
+                            <a id='privacy-policy-link' href='/privacy-policy' className='hover:text-text-main transition-colors duration-150 underline decoration-white/10'>
+                                Privacy Policy
+                            </a>
                         </p>
                     </div>
                 </div>

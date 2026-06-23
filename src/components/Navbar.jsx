@@ -14,8 +14,6 @@ export default function Navbar({ currentPath }) {
     const navigation = [
         { name: 'Home', href: '/', current: normalizedCurrentPath === '/' },
         { name: 'Features & Services', href: '/services', current: normalizedCurrentPath === '/services' },
-        { name: 'Case Studies', href: '/portfolio', current: normalizedCurrentPath === '/portfolio' },
-        { name: 'Locations', href: '/locations', current: normalizedCurrentPath === '/locations' },
         { name: 'Contact', href: '/contact', current: normalizedCurrentPath === '/contact' },
         { name: 'About Us', href: '/about', current: normalizedCurrentPath === '/about' },
     ];

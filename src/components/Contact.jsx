@@ -24,7 +24,7 @@ const Contact = () => {
               <div className='p-2.5 bg-primary/10 rounded-lg text-primary'>
                 <EnvelopeIcon className='h-6 w-6' />
               </div>
-              <a id='email' href='mailto:info@yobix.in' className='text-base font-semibold'>
+              <a id='email' href='mailto:info@yobix.in' target='_blank' rel='noopener noreferrer' className='text-base font-semibold'>
                 info@yobix.in
               </a>
             </div>
