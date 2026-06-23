@@ -69,8 +69,8 @@ const HomeContent = () => {
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           {/* Visual Triangle diagram */}
-          <div className='flex justify-center items-center py-6'>
-            <div className='relative w-[320px] h-[320px] sm:w-[400px] sm:h-[400px]'>
+          <div className='flex justify-center items-center py-10 px-8 sm:px-12 overflow-visible'>
+            <div className='relative w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] md:w-[400px] md:h-[400px]'>
               {/* Central Triangle SVG */}
               <svg viewBox='0 0 100 100' className='absolute inset-0 w-full h-full text-primary/30'>
                 <polygon points='50,15 15,75 85,75' fill='none' stroke='currentColor' strokeWidth='1.5' />
