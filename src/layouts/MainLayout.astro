@@ -8,11 +8,11 @@ import '../styles/global.css'
 const {
     title,
     fullWidth = false,
-    description = "Gunpoint Tattoo Studio - Premium Artistry. Professional Standards.",
-    ogTitle = "Gunpoint Tattoo Studio",
-    ogDescription = "Gunpoint Tattoo Studio - Premium Artistry. Professional Standards.",
-    ogUrl = "https://gunpointtattoostudio.com",
-    ogImage = "https://gunpointtattoostudio.com/logo.webp", // Default image
+    description = "Yobix - Sub-Second Real-Time Business Intelligence Platform.",
+    ogTitle = "Yobix",
+    ogDescription = "Yobix - Sub-Second Real-Time Business Intelligence Platform.",
+    ogUrl = "https://yobix.in",
+    ogImage = "https://yobix.in/logo.webp", // Default image
     twitterCard = "summary_large_image",
     twitterTitle = ogTitle,
     twitterDescription = ogDescription,
@@ -36,9 +36,18 @@ const currentPath = Astro.url.pathname;
     <meta property="twitter:title" content={twitterTitle} />
     <meta property="twitter:description" content={twitterDescription} />
     <meta property="twitter:image" content={twitterImage} />
-    <title>{title} | Gunpoint Tattoo Studio</title>
+    <title>{title} | Yobix</title>
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/webp" href="/logo.webp" />
+    <script is:inline>
+        (function() {
+            const savedTheme = localStorage.getItem('yobix-theme');
+            if (savedTheme) {
+                document.documentElement.className = '';
+                document.documentElement.classList.add(savedTheme);
+            }
+        })();
+    </script>
     <Schema/>
 </head>
 <body class="bg-background text-text-main">

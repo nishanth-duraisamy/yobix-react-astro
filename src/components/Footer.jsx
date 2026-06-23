@@ -1,78 +1,54 @@
-import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import fb from '../assets/fb.webp';
-import insta from '../assets/insta.webp';
-import wa from '../assets/wa.webp';
+import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const Footer = () => {
-    const socialLinks = [
-        {
-            name: 'Facebook',
-            href: 'https://www.facebook.com/p/Gun-Point-Tattoo-Studios-100063521092954',
-            icon: fb,
-        },
-        {
-            name: 'Instagram',
-            href: 'https://www.instagram.com/gunpoint_tattoostudio',
-            icon: insta,
-        },
-        {
-            name: 'Whatsapp',
-            href: 'https://wa.me/917667755644',
-            icon: wa,
-        },
-    ];
-
     return (
-        <footer className='bg-secondary border-t-2 border-accent will-change-[transform]'>
-            <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8'>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <footer className='bg-secondary border-t border-white/5'>
+            <div className='max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8'>
+                <div className='mb-8'>
                     {/* Contact Info */}
-                    <div className='space-y-3'>
-                        <h3 className='text-lg font-semibold text-primary'>Contact Us</h3>
-                        <div className='flex items-center space-x-3'>
-                            <PhoneIcon className='h-6 w-6 text-primary' />
-                            <a href='tel:+917667755644' className='hover:text-primary-light'>
-                                +91 76677 55644
+                    <div className='flex flex-col items-start space-y-4 w-full'>
+                        <h3 className='text-lg font-bold text-primary font-display tracking-wide uppercase'>Contact Us</h3>
+                        <div className='flex items-center space-x-3 text-text-muted hover:text-text-main transition-colors duration-200'>
+                            <PhoneIcon className='h-5 w-5 text-accent' />
+                            <a id='phone' href='tel:+918344647780' className='text-sm'>
+                                +91 83446 47780
                             </a>
                         </div>
-                        <div className='flex items-center space-x-3'>
-                            <EnvelopeIcon className='h-6 w-6 text-primary' />
-                            <a
-                                href='mailto:info@yobix.in'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='hover:text-primary-light'
-                            >
+                        <div className='flex items-center space-x-3 text-text-muted hover:text-text-main transition-colors duration-200'>
+                            <EnvelopeIcon className='h-5 w-5 text-accent' />
+                            <a id='email' href='mailto:info@yobix.in' className='text-sm'>
                                 info@yobix.in
                             </a>
                         </div>
-                    </div>
-
-                    {/* Social Media */}
-                    <div className='space-y-3'>
-                        <h3 className='text-lg font-semibold text-primary'>Follow Us</h3>
-                        <div className='flex space-x-4'>
-                            {socialLinks.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={item.href}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className='hover:text-primary-light'
-                                >
-                                    <span className='sr-only'>{item.name}</span>
-                                    {/* .src is required here for the image to resolve */}
-                                    <img src={item.icon.src} alt={item.name} className='h-8 w-8' />
-                                </a>
-                            ))}
+                        <div className='flex items-center space-x-3 text-text-muted hover:text-text-main transition-colors duration-200'>
+                            <svg className='h-5 w-5 text-accent' fill='currentColor' viewBox='0 0 24 24'>
+                                <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/>
+                            </svg>
+                            <a id='instagram' href='https://www.instagram.com/yobix.in/' target='_blank' rel='noopener noreferrer' className='text-sm'>
+                                yobix.in
+                            </a>
                         </div>
                     </div>
+                </div>
 
-                    {/* Copyright */}
-                    <div className='text-center md:text-right'>
-                        <p className=''>
-                            &copy; {new Date().getFullYear()} Gunpoint Tattoo Studio. All
-                            Rights Reserved.
+                {/* Bottom Row - Address & Copyright */}
+                <div className='pt-8 border-t border-white/5 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
+                    <div className='flex items-start space-x-3 text-text-muted hover:text-text-main transition-colors duration-200 max-w-xl'>
+                        <MapPinIcon className='h-5 w-5 text-accent mt-0.5 flex-shrink-0' />
+                        <a 
+                            id='address-link'
+                            href='https://maps.google.com/?q=22b,+Kongu+nagar,+kalveerampalayam,+coimbatore-641046' 
+                            target='_blank' 
+                            rel='noopener noreferrer' 
+                            className='text-sm leading-relaxed'
+                        >
+                            22b, Kongu nagar, kalveerampalayam, coimbatore - 641046
+                        </a>
+                    </div>
+                    <div className='text-left md:text-right text-text-muted text-sm space-y-1'>
+                        <p className='font-semibold text-text-main font-display'>Yobix (OPC) Private Limited</p>
+                        <p>
+                            &copy; {new Date().getFullYear()} Yobix. All Rights Reserved.
                         </p>
                     </div>
                 </div>

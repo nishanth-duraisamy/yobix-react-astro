@@ -1,59 +1,83 @@
-import owner from '../assets/artists/ranjith.webp';
-
 function AboutUsComponent() {
+  const values = [
+    {
+      title: 'Actionable Insights',
+      description: 'We believe data is only as good as the decisions it enables. We focus on delivering clear, immediate insights.'
+    },
+    {
+      title: 'Real-time Processing',
+      description: 'In the modern business environment, hours of delay can cost millions. Yobix processes information as it happens.'
+    },
+    {
+      title: 'Uncompromised Security',
+      description: 'Enterprise-grade encryption and strict access controls ensure your business intelligence remains entirely yours.'
+    },
+    {
+      title: 'Seamless Integration',
+      description: 'Connect to database clusters, cloud warehouses, and API streams in minutes without custom engineering.'
+    }
+  ];
+
   return (
-    <div className='bg-background-dark text-text-light py-8 px-4 sm:px-6 lg:px-8'>
+    <div className='bg-background text-text-main py-16 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'>
-        <div className='text-center mb-8'>
-          <h1 className='text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl'>
-            Our Story
+        {/* Header */}
+        <div className='text-center mb-16'>
+          <h1 className='text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-primary font-display'>
+            Our Mission
           </h1>
-          <p className='mt-2 max-w-md mx-auto text-base text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl'>
-            From a humble beginning to a celebrated name in the world of tattoo
-            art.
+          <p className='mt-4 max-w-2xl mx-auto text-lg text-text-muted'>
+            Empowering modern enterprises with sub-second analytical visibility. We translate complex data streams into intuitive business decisions.
           </p>
         </div>
 
-        <div className='flex flex-col md:flex-row items-center md:space-x-12'>
-          <div className='md:w-1/2 mb-6 md:mb-0'>
-            <img
-              className='w-48 h-48 object-cover rounded-full shadow-xl ring-4 ring-primary ring-offset-4 ring-offset-background-dark mx-auto transition-transform duration-300 transform hover:scale-105'
-              src={owner.src}
-              alt='Ranjith Kumar, founder of Gunpoint Tattoo Studio'
-            />
-          </div>
-          <div className='md:w-1/2'>
-            <h2 className='text-3xl font-bold mb-2'>
-              Meet the Artist: Ranjith Kumar
+        {/* Brand Showcase Block */}
+        <div className='flex flex-col lg:flex-row items-center justify-between gap-12 mb-20 bg-secondary/35 border border-white/5 rounded-3xl p-8 lg:p-12 shadow-2xl'>
+          <div className='lg:w-1/2 space-y-6'>
+            <h2 className='text-3xl font-bold font-display text-text-main'>
+              The Story Behind Yobix
             </h2>
-            <p className='text-lg mb-2'>
-              The heart and soul of Gunpoint Tattoo Studio, Ranjith Kumar, began
-              his journey in 2015. With a passion for art and a dedication to
-              his craft, he opened his first tattoo shop in the vibrant city of
-              Erode.
+            <p className='text-text-muted leading-relaxed'>
+              Founded in Coimbatore, Yobix arose from a simple realization: modern enterprises are swimming in data but starving for insights. Traditional BI architectures require hours to sync, leaving decision-makers looking in the rearview mirror.
             </p>
-            <p className='text-lg mb-2'>
-              His unique style, attention to detail, and commitment to hygiene
-              quickly earned him a reputation as one of the most trusted tattoo
-              artists in the region. What started as a small, one-man operation
-              has blossomed into a testament to his hard work and artistic
-              vision.
+            <p className='text-text-muted leading-relaxed'>
+              Yobix built a state-of-the-art columnar analytics engine capable of aggregating petabyte-scale datasets on the fly. Today, we power dashboarding, automated alerts, and predictive modeling for high-growth startups and legacy corporations alike.
             </p>
-            <p className='text-lg mb-2'>
-              Today, Gunpoint Tattoo Studio stands as a pillar of excellence in
-              the tattoo community. We are proud to have expanded our family,
-              with thriving studios in{' '}
-              <span className='text-primary font-semibold'>
-                multiple cities
-              </span>
-              .
-            </p>
-            <p className='text-lg'>
-              Ranjith's story is one of perseverance and success, a reminder
-              that with passion and dedication, any dream is achievable. We are
-              excited to be a part of your story and to create a piece of art
-              that you will cherish for a lifetime.
-            </p>
+          </div>
+          <div className='lg:w-5/12 flex justify-center'>
+            <div className='relative group'>
+              <div className='absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary to-accent opacity-30 blur group-hover:opacity-50 transition duration-500'></div>
+              <div className='relative bg-secondary border border-white/5 p-8 rounded-2xl flex flex-col items-center text-center max-w-sm'>
+                <img
+                  className='h-24 w-auto rounded-xl mb-6 shadow-md'
+                  src='/logo.webp'
+                  alt='Yobix Platform Logo'
+                />
+                <h3 className='text-xl font-bold text-text-main mb-2 font-display'>Yobix BI Suite</h3>
+                <p className='text-sm text-text-muted'>
+                  Architected for sub-second database querying and predictive modeling.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Values Grid */}
+        <div className='space-y-12'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold font-display text-text-main'>Our Core Values</h2>
+            <p className='text-text-muted mt-2'>The principles guiding our engineers and product designers.</p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            {values.map((val) => (
+              <div
+                key={val.title}
+                className='bg-secondary/40 border border-white/5 p-8 rounded-2xl hover:border-primary/10 transition-all duration-300'
+              >
+                <h3 className='text-xl font-semibold text-primary font-display mb-3'>{val.title}</h3>
+                <p className='text-text-muted leading-relaxed'>{val.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,21 +1,16 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
-import customDesign1 from '../assets/tattoo/custom/1.webp';
-import customDesign2 from '../assets/tattoo/custom/2.webp';
-import customDesign3 from '../assets/tattoo/custom/3.webp';
 
 const CustomDesignExperience = () => {
   return (
-    <div className='bg-background text-text-main py-12 sm:py-16 px-4 sm:px-6 lg:px-8'>
+    <div className='bg-secondary/20 border border-white/5 rounded-3xl text-text-main py-12 px-6 sm:px-12'>
       <div className='max-w-7xl mx-auto'>
         {/* Header Section */}
         <div className='text-center mb-10'>
-          <h1 className='text-4xl sm:text-5xl font-serif text-primary mb-2'>
-            Your Vision, Our Artistry: Custom Tattoo Design.
+          <h1 className='text-3xl sm:text-4xl font-display text-primary mb-3'>
+            Enterprise Data Modeling & Warehouse Architecture
           </h1>
-          <p className='max-w-3xl mx-auto text-lg text-text-main/80'>
-            When you have a unique idea that needs to be brought to life, our
-            custom design service is for you. We transform your concepts into a
-            one-of-a-kind tattoo.
+          <p className='max-w-3xl mx-auto text-base text-text-muted'>
+            Optimize your corporate datalake, schemas, and analytical transformations. Our consulting architects help you model data pipelines for maximum throughput and minimum compute costs.
           </p>
         </div>
 
@@ -24,78 +19,70 @@ const CustomDesignExperience = () => {
           {/* Left Column */}
           <div className='space-y-8'>
             <div>
-              <h2 className='text-2xl font-serif text-text-main mb-2'>
-                The Custom Design Process
+              <h2 className='text-xl font-bold font-display text-text-main mb-3'>
+                The Data Modeling Process
               </h2>
-              <ul className='space-y-2'>
+              <ul className='space-y-3'>
                 {[
-                  'In-depth consultation to understand your ideas, style, and placement.',
-                  'Collaborative design process with sketches and digital mock-ups.',
-                  'Unlimited revisions until the design is perfect for you.',
-                  'Expert application by artists specialized in bringing complex visions to life.',
+                  'In-depth review of existing db structure, partitioning, and slow-running queries.',
+                  'Collaborative schema design with diagrams, entity relationships, and dbt models.',
+                  'Validation audits for security roles, columns encryption, and row-level segregation.',
+                  'Implementation assistance to build, run, and scale pipelines using Yobix engines.',
                 ].map((item) => (
                   <li key={item} className='flex items-start'>
-                    <CheckIcon className='h-6 w-6 text-primary mr-3 flex-shrink-0' />
-                    <span className='text-text-main/80'>{item}</span>
+                    <CheckIcon className='h-5 w-5 text-accent mr-3 flex-shrink-0' />
+                    <span className='text-text-muted'>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <p className='text-xl font-serif text-primary text-center lg:text-left border-l-4 border-primary pl-4'>
-              Every custom tattoo is a journey from imagination to skin.
+            <p className='text-lg font-display text-primary border-l-4 border-primary pl-4'>
+              Transform raw transactional records into high-performance analytical aggregates.
             </p>
             <div>
-              <h2 className='text-2xl font-serif text-text-main mb-2'>
-                What Makes Our Custom Designs Stand Out
+              <h2 className='text-xl font-bold font-display text-text-main mb-3'>
+                Key Architectural Benefits
               </h2>
-              <ul className='space-y-2'>
+              <ul className='space-y-3'>
                 {[
-                  'Truly unique artwork tailored to your personal story.',
-                  'Guidance on design longevity and skin compatibility.',
-                  'A comfortable and creative environment for your design journey.',
-                  'A final piece that exceeds expectations and lasts a lifetime.',
+                  'Clean schemas that reduce JOIN complexities and processing duration.',
+                  'Future-proof modeling that scales cleanly from Gigabytes to Petabytes.',
+                  'Reduced compute expenses in Snowflake, BigQuery, or Databricks.',
+                  'Self-healing, modular ETL runs that alert you instantly upon node failures.',
                 ].map((item) => (
                   <li key={item} className='flex items-start'>
-                    <CheckIcon className='h-6 w-6 text-primary mr-3 flex-shrink-0' />
-                    <span className='text-text-main/80'>{item}</span>
+                    <CheckIcon className='h-5 w-5 text-accent mr-3 flex-shrink-0' />
+                    <span className='text-text-muted'>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          {/* Right Column (Visuals & Gallery) */}
-          <div className='space-y-3'>
-            <div className='group'>
-              <img
-                src={customDesign1.src}
-                alt='Intricate custom back piece tattoo'
-                className='w-full h-auto object-cover aspect-video rounded-lg transition-transform duration-300 group-hover:scale-105'
-              />
-              <p className='text-center text-sm text-text-main/60 mt-2'>
-                Intricate custom back piece
-              </p>
+          {/* Right Column (Info display/flowchart) */}
+          <div className='bg-background/80 border border-white/5 p-8 rounded-2xl flex flex-col justify-between space-y-6'>
+            <h3 className='text-lg font-bold font-display text-text-main'>Database Connections</h3>
+            <div className='grid grid-cols-2 gap-3 text-sm'>
+              <div className='p-4 bg-secondary/50 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center'>
+                <span className='font-bold text-text-main'>PostgreSQL</span>
+                <span className='text-xs text-accent mt-1'>OLTP DB</span>
+              </div>
+              <div className='p-4 bg-secondary/50 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center'>
+                <span className='font-bold text-text-main'>Snowflake</span>
+                <span className='text-xs text-accent mt-1'>Cloud DWH</span>
+              </div>
+              <div className='p-4 bg-secondary/50 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center'>
+                <span className='font-bold text-text-main'>BigQuery</span>
+                <span className='text-xs text-accent mt-1'>Serverless DWH</span>
+              </div>
+              <div className='p-4 bg-secondary/50 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center'>
+                <span className='font-bold text-text-main'>Apache Kafka</span>
+                <span className='text-xs text-accent mt-1'>Streaming</span>
+              </div>
             </div>
-            <div className='group'>
-              <img
-                src={customDesign2.src}
-                alt='Geometric custom arm tattoo'
-                className='w-full h-auto object-cover aspect-video rounded-lg transition-transform duration-300 group-hover:scale-105'
-              />
-              <p className='text-center text-sm text-text-main/60 mt-2'>
-                Geometric custom arm sleeve
-              </p>
-            </div>
-            <div className='group'>
-              <img
-                src={customDesign3.src}
-                alt='Floral custom thigh tattoo'
-                className='w-full h-auto object-cover aspect-video rounded-lg transition-transform duration-300 group-hover:scale-105'
-              />
-              <p className='text-center text-sm text-text-main/60 mt-2'>
-                Floral custom thigh piece
-              </p>
-            </div>
+            <p className='text-xs text-text-muted text-center'>
+              Connected natively via SSL, IAM roles, or OAuth integration.
+            </p>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gunpointtattoostudio.com',
+  site: 'https://yobix.in',
   integrations: [react(), sitemap()],
   vite: {
     plugins: [

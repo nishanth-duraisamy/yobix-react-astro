@@ -1,123 +1,97 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
-import fineLine from '../assets/tattoo/first/fine-line.webp';
-import minimalSymbol from '../assets/tattoo/first/minimal-symbol.webp';
-import smallText from '../assets/tattoo/first/small-text.webp';
 
 const worries = [
-  'What if I choose the wrong design?',
-  'What if it hurts more than I expect?',
-  'What if I regret it later?',
+  'Is real-time data ingestion going to cause queries to slow down?',
+  'Will query costs skyrocket as data size scales to terabytes?',
+  'How difficult is it to setup automated real-time alerts?',
 ];
 
 const solutions = [
-  'We help you narrow down ideas until it feels right.',
-  'We guide you on placement for aesthetics and comfort.',
-  'We recommend clean, timeless styles that last.',
-  'You never have to decide everything on day one.',
+  'Sub-second query execution times on live streaming data.',
+  'Columnar compression that reduces storage and query footprints by up to 90%.',
+  'Automated triggers connected directly to Slack, Teams, and email endpoints.',
+  'No complex database indexing or partitioning needed out-of-the-box.',
 ];
 
 const trustFactors = [
-  '1,000+ first-time tattoos completed successfully.',
-  'A calm, sterile, and private process from start to finish.',
-];
-
-const tattooExamples = [
-  {
-    src: fineLine,
-    caption: 'First tattoo - fine line',
-  },
-  {
-    src: minimalSymbol,
-    caption: 'Minimal symbol',
-  },
-  {
-    src: smallText,
-    caption: 'Small text',
-  },
+  'Powering analytics for over 500 enterprise production clusters.',
+  'Guaranteed 99.99% uptime SLA for high-throughput streaming environments.',
 ];
 
 const FirstTattooExperience = () => {
   return (
-    <div className='bg-background text-text-main py-12 sm:py-16 px-4 sm:px-6 lg:px-8'>
+    <div className='bg-secondary/20 border border-white/5 rounded-3xl text-text-main py-12 px-6 sm:px-12'>
       <div className='max-w-7xl mx-auto'>
         {/* Header Section */}
         <div className='text-center mb-10'>
-          <h1 className='text-4xl sm:text-5xl font-serif text-primary mb-2'>
-            Your first tattoo should feel exciting — not overwhelming.
+          <h1 className='text-3xl sm:text-4xl font-display text-primary mb-3'>
+            Real-Time Analytics Platform
           </h1>
-          <p className='max-w-3xl mx-auto text-lg text-text-main/80'>
-            You want something meaningful, safe, and done right the first time.
-            Not rushed. Not pressured. Not something you regret later.
+          <p className='max-w-3xl mx-auto text-base text-text-muted'>
+            Query and visualize streaming event pipelines with sub-second latency. Keep your teams informed on operations as they happen, not hours later.
           </p>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
           {/* Left Column */}
-          <div className='space-y-12'>
+          <div className='space-y-8'>
             <div>
-              <h2 className='text-2xl font-serif text-text-main mb-2'>
-                This is probably what you’re worried about
+              <h2 className='text-xl font-bold font-display text-text-main mb-3'>
+                Common Streaming Obstacles
               </h2>
               <ul className='space-y-3'>
                 {worries.map((item) => (
                   <li key={item} className='flex items-start'>
-                    <CheckIcon className='h-6 w-6 text-primary mr-3 flex-shrink-0' />
-                    <span className='text-text-main/80'>{item}</span>
+                    <span className='h-2 w-2 rounded-full bg-red-500 mr-3 mt-2 flex-shrink-0' />
+                    <span className='text-text-muted'>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className='text-2xl font-serif text-text-main mb-2'>
-                How we make first tattoos easier
+              <h2 className='text-xl font-bold font-display text-text-main mb-3'>
+                The Yobix Streamlining Solution
               </h2>
               <ul className='space-y-3'>
                 {solutions.map((item) => (
                   <li key={item} className='flex items-start'>
-                    <CheckIcon className='h-6 w-6 text-primary mr-3 flex-shrink-0' />
-                    <span className='text-text-main/80'>{item}</span>
+                    <CheckIcon className='h-5 w-5 text-accent mr-3 flex-shrink-0' />
+                    <span className='text-text-muted'>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <p className='text-xl font-serif text-primary text-center lg:text-left border-l-4 border-primary pl-4'>
-              This is a guided process — not a rushed appointment.
-            </p>
           </div>
 
           {/* Right Column */}
-          <div className='space-y-12'>
-            {/* Image Row */}
-            <div>
-              <div className='grid grid-cols-3 gap-3 mb-1'>
-                {tattooExamples.map((img) => (
-                  <img
-                    key={img.caption}
-                    src={img.src.src}
-                    alt={img.caption}
-                    className='rounded-lg object-cover aspect-[3/4]'
-                  />
-                ))}
-              </div>
-              <div className='grid grid-cols-3 gap-3 text-center'>
-                {tattooExamples.map((img) => (
-                  <p key={img.caption} className='text-sm text-text-main/60'>
-                    {img.caption}
-                  </p>
-                ))}
+          <div className='space-y-8 flex flex-col justify-between'>
+            <div className='bg-background/80 border border-white/5 p-6 rounded-2xl'>
+              <h3 className='text-lg font-bold font-display text-text-main mb-3'>Architectural Pipeline</h3>
+              <div className='space-y-3 text-sm'>
+                <div className='flex items-center justify-between p-2.5 bg-secondary/50 rounded-lg border border-white/5'>
+                  <span className='text-text-muted'>Data Sources (Kafka, PubSub, DBs)</span>
+                  <span className='text-accent font-semibold'>Ingesting</span>
+                </div>
+                <div className='flex items-center justify-between p-2.5 bg-secondary/50 rounded-lg border border-white/5'>
+                  <span className='text-text-muted'>Yobix Analytics Columnar Engine</span>
+                  <span className='text-primary font-semibold'>Processing</span>
+                </div>
+                <div className='flex items-center justify-between p-2.5 bg-secondary/50 rounded-lg border border-white/5'>
+                  <span className='text-text-muted'>Instant Custom Dashboards & Reports</span>
+                  <span className='text-emerald-400 font-semibold'>Rendering</span>
+                </div>
               </div>
             </div>
 
-            {/* Trust Section */}
             <div>
-              <h2 className='text-2xl font-serif text-text-main mb-2'>
-                Why people trust us for their first tattoo
+              <h2 className='text-xl font-bold font-display text-text-main mb-3'>
+                Why enterprises choose Yobix
               </h2>
               <ul className='space-y-3'>
                 {trustFactors.map((item) => (
                   <li key={item} className='flex items-start'>
-                    <CheckIcon className='h-6 w-6 text-primary mr-3 flex-shrink-0' />
-                    <span className='text-text-main/80'>{item}</span>
+                    <CheckIcon className='h-5 w-5 text-accent mr-3 flex-shrink-0' />
+                    <span className='text-text-muted'>{item}</span>
                   </li>
                 ))}
               </ul>

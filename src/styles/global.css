@@ -1,25 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @theme {
   /* Core Semantic Palette */
-  --color-primary: #d4af37; /* Brand Gold */
-  --color-primary-light: #fce594; /* Hover Gold */
-  --color-primary-dark: #4a3612; /* Shadow/Depth */
+  --color-primary: #3b82f6; /* Electric Blue */
+  --color-primary-light: #60a5fa; /* Light Accent Blue */
+  --color-primary-dark: #1d4ed8; /* Dark Blue */
 
-  --color-secondary: #333333; /* Gunmetal Gray (Cards) */
-  --color-accent: #8c6a28; /* Bronze (Borders) */
+  --color-secondary: #0f172a; /* Slate 900 (Cards and Sections) */
+  --color-accent: #06b6d4; /* Cyan (Highlights/Accents) */
 
-  --color-background: #000000; /* Deep Black */
+  --color-background: #030712; /* Deep Charcoal/Black */
 
-  --color-text-main: #ffffff; /* Primary White */
+  --color-text-main: #f9fafb; /* Off-White */
+  --color-text-muted: #9ca3af; /* Gray 400 */
 
-  --font-display: 'Pirata One', serif;
-  --font-body: 'Lato', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --font-sans:
-    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+html.theme-light {
+  --color-primary: #2563eb; /* Cobalt Blue */
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #0f766e; /* Teal */
+  --color-secondary: #f1f5f9; /* Slate 100 */
+  --color-background: #f8fafc; /* Slate 50 */
+  --color-text-main: #0f172a; /* Slate 900 */
+  --color-text-muted: #475569; /* Slate 600 */
+}
+
+/* Wildcard border overrides for Light Mode */
+html.theme-light [class*="border-white/"] {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.theme-light [class*="divide-white/"] > * {
+  border-color: rgba(15, 23, 42, 0.08) !important;
 }
 
 @layer base {
@@ -27,30 +48,34 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
   }
 
   body {
     display: flex; /* Make body a flex container */
     flex-direction: column; /* Stack children vertically */
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-background);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: var(--color-primary);
+    color: var(--color-text-main);
+    font-family: var(--font-display);
     font-weight: 700;
   }
 }
 
 /* Custom Animations */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); opacity: 0.9; }
-  50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.7); opacity: 1; }
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); opacity: 0.9; }
+  50% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.6); opacity: 1; }
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2.5s infinite ease-in-out;
+  animation: pulse-glow 3s infinite ease-in-out;
 }
 
 @keyframes fade-in {
@@ -68,41 +93,31 @@
   animation: fade-in 1s ease-out forwards;
 }
 
-@keyframes spin-y {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.animate-spin-y {
-  animation: spin-y 1s linear infinite;
-}
-
-/* Hide Calendly Branding */
-.calendly-badge-widget {
-  display: none !important;
+.animate-float {
+  animation: float 4s infinite ease-in-out;
 }
 
 /* Custom Scrollbar */
 /* For Webkit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 0px; /* Hide scrollbar for Webkit browsers */
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-background); /* Dark background */
-  border-radius: 10px;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary); /* Gold thumb */
-  border-radius: 10px;
-  border: 2px solid var(--color-background); /* Border to match track */
+  background: var(--color-secondary);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-light); /* Lighter gold on hover */
+  background: var(--color-primary);
 }

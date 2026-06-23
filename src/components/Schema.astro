@@ -1,61 +1,49 @@
 ---
 // src/components/Schema.astro
-import { locations } from '../data/locations';
+const websiteUrl = 'https://yobix.in';
+const contactPhone = '+918344647780';
 
-const websiteUrl = 'https://gunpointtattoostudio.com';
-const contactPhone = '+917667755644';
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Yobix',
+  url: websiteUrl,
+  logo: `${websiteUrl}/logo.webp`,
+  telephone: contactPhone,
+  email: 'info@yobix.in',
+  sameAs: [
+    'https://www.instagram.com/yobix.in/'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: contactPhone,
+    contactType: 'sales',
+    areaServed: 'IN',
+    availableLanguage: ['en']
+  }
+};
 
-const schemas = locations.map((location) => {
-    const addressComponents = location.address.split(', ');
-
-    // Logic preserved from your React component
-    const streetAddress = addressComponents
-        .slice(0, addressComponents.length - 3)
-        .join(', ');
-    const addressLocality = addressComponents[addressComponents.length - 3];
-    const addressRegion = addressComponents[addressComponents.length - 2];
-    const postalCode = addressComponents[addressComponents.length - 1];
-
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        name: location.displayName,
-        image: `${websiteUrl}/logo.webp`,
-        url: websiteUrl,
-        telephone: contactPhone,
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: streetAddress,
-            addressLocality: addressLocality,
-            addressRegion: addressRegion,
-            postalCode: postalCode,
-            addressCountry: 'IN',
-        },
-        hasMap: location.mapSrc,
-        openingHoursSpecification: [
-            {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: [
-                    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
-                ],
-                opens: '10:00',
-                closes: '22:00',
-            },
-        ],
-        priceRange: '$$',
-        slogan: 'Crafting unique tattoo experiences.',
-        logo: `${websiteUrl}/logo.webp`,
-        description: `Experience premium custom tattoos, fine-line designs, and expert cover-ups at ${location.displayName}. Specializing in unique artistry and safe piercing services.`,
-        sameAs: [
-            'https://www.facebook.com/p/Gun-Point-Tattoo-Studios-100063521092954',
-            'https://www.instagram.com/gunpoint_tattoostudio',
-            'https://wa.me/917667755644',
-        ],
-    };
-});
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Yobix Business Intelligence Suite',
+  operatingSystem: 'All',
+  applicationCategory: 'BusinessApplication',
+  offers: {
+    '@type': 'Offer',
+    price: '0.00',
+    priceCurrency: 'USD',
+    description: 'Free sandbox testing and platform walkthrough demo.'
+  },
+  description: 'Sub-second real-time business intelligence and data visualization platform connected to enterprise database clusters.',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    ratingCount: '128'
+  }
+};
 ---
 
-{/* Injecting multiple schemas into the <head> */}
-{schemas.map((schema) => (
-<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
-    ))}
+{/* Injecting schemas into the <head> */}
+<script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(appSchema)} />

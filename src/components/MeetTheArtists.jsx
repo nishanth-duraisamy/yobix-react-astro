@@ -1,44 +1,45 @@
 import ArtistCard from './ArtistCard';
-import arun from '../assets/artists/arun.webp';
-import karthi from '../assets/artists/karthi.webp';
-import nandhini from '../assets/artists/nandhini.webp';
-import ranjith from '../assets/artists/ranjith.webp';
 
-const artists = [
+const teamMembers = [
   {
-    name: 'Ranjith',
-    image: ranjith,
-    role: 'Founder & Lead Artist',
-    bio: 'Specialist in hyper-realism, cover-ups, and large-scale custom concepts.',
+    name: 'Siddharth Nair',
+    role: 'Founder & CEO',
+    bio: 'Former principal data architect with a decade of experience designing enterprise data warehouses.',
   },
   {
-    name: 'Karthi',
-    image: karthi,
-    role: 'Senior Artist',
-    bio: 'Master of vibrant neo-traditional styles and advanced color packing.',
+    name: 'Priya Sundar',
+    role: 'Chief Technology Officer',
+    bio: 'Distributed systems engineer specializing in low-latency analytics engines and column-store databases.',
   },
   {
-    name: 'Nandhini',
-    image: nandhini,
-    role: 'Senior Artist',
-    bio: 'Expert in delicate fine-line work, dotwork, and minimalist aesthetics.',
+    name: 'Amit Patel',
+    role: 'Head of Product',
+    bio: 'Passionate about simplifying analytics interfaces to make business intelligence accessible to everyone.',
   },
   {
-    name: 'Arun',
-    image: arun,
-    role: 'Tattoo Artist',
-    bio: 'Versatile artist focused on black & grey realism and intricate sketching.',
+    name: 'Meera Krishnan',
+    role: 'Lead UI/UX Designer',
+    bio: 'Crafting responsive data visualization experiences that feel natural, fluid, and visually stunning.',
   },
 ];
 
 const MeetTheArtists = () => {
   return (
-    <div className='container mx-auto px-4 py-6'>
-      <h2 className='text-4xl font-bold text-center mb-6'>Meet Our Artists</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-        {artists.map((artist) => (
-          <ArtistCard key={artist.name} artist={artist} />
-        ))}
+    <div className='py-16 bg-background text-text-main'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='text-center mb-12'>
+          <h2 className='text-4xl font-extrabold tracking-tight sm:text-5xl font-display text-text-main'>
+            Meet Our Leadership Team
+          </h2>
+          <p className='mt-3 max-w-2xl mx-auto text-base text-text-muted sm:text-lg'>
+            The minds building the future of database analytics and real-time dashboarding.
+          </p>
+        </div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
+          {teamMembers.map((member) => (
+            <ArtistCard key={member.name} artist={member} />
+          ))}
+        </div>
       </div>
     </div>
   );

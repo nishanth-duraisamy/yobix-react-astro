@@ -2,52 +2,47 @@ import { CheckIcon } from '@heroicons/react/24/solid';
 
 const sections = [
   {
-    title: 'Before your appointment',
+    title: 'Before the Product Tour',
     items: [
-      'Eat a good meal and stay hydrated.',
-      'Get a good night’s sleep.',
-      'Avoid alcohol and excessive caffeine 24 hours prior.',
-      'Moisturize the area daily for a week leading up to your appointment.',
-      'Wear comfortable clothing that allows easy access to the tattoo area.',
+      'Identify key data sources (BigQuery, PostgreSQL, Snowflake, API streams).',
+      'List primary bottleneck dashboards or slow-loading reports.',
+      'Define success metrics (e.g., query load times, automated email alerts frequency).',
+      'Invite team members who will actively use the dashboard builder.'
     ],
   },
   {
-    title: 'During your appointment',
+    title: 'During the live demo',
     items: [
-      'Communicate openly with your artist about comfort and breaks.',
-      'Relax and trust your artist’s expertise.',
-      'Bring headphones for entertainment if you wish.',
-      'Stay still, especially during critical outlining.',
-      'Hydrate and have snacks available for longer sessions.',
+      'Explain your database scale and querying frequency requirements.',
+      'Request a walk-through of the custom columnar database connector.',
+      'Check the automated alerting system and Slack/Teams integrations.',
+      'Ask about access controls, row-level security, and team workspaces.'
     ],
   },
   {
-    title: 'Aftercare basics',
+    title: 'Trial setup basics',
     items: [
-      'Keep the tattoo clean and moisturized as instructed.',
-      'Avoid direct sunlight and swimming.',
-      'Do not pick or scratch your healing tattoo.',
-      'Follow all specific aftercare instructions provided by your artist.',
-      'Contact us if you have any concerns or questions during healing.',
+      'Create a sandbox Yobix account using your enterprise email.',
+      'Connect a test dataset or query schema to verify query speeds.',
+      'Build a simple test dashboard and invite 1-2 team reviewers.',
+      'Schedule a feedback session with our support engineers.'
     ],
   },
 ];
 
 const PreparationGuide = ({ bookedLocationDetails }) => {
-  // Assuming you want to display contact info for a specific location,
-  // or a default one if not specified. For now, let's use the first location's phone.
-  const contactPhoneNumber = '+91 76677 55644';
+  const contactPhoneNumber = '+91 83446 47780';
 
   return (
-    <div className='bg-background text-text-main py-12 sm:py-16 px-4 sm:px-6 lg:px-8'>
+    <div className='bg-background text-text-main py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-white/5'>
       <div className='max-w-7xl mx-auto space-y-12'>
         {/* Header Section */}
         <div className='text-center'>
-          <h1 className='text-4xl sm:text-5xl font-serif text-primary mb-2'>
-            Your Guide to a Great Tattoo Experience.
+          <h1 className='text-4xl sm:text-5xl font-display text-primary mb-2'>
+            Prepare for Your Demo Tour
           </h1>
-          <p className='max-w-3xl mx-auto text-lg text-text-main/80'>
-            Preparation is key to a smooth session and a perfectly healed tattoo. Follow these steps to ensure the best possible outcome for your new art.
+          <p className='max-w-3xl mx-auto text-lg text-text-muted'>
+            Getting the most out of your consultation starts with simple preparation. Follow this checklist to ensure we cover your exact technical setup.
           </p>
         </div>
 
@@ -57,14 +52,14 @@ const PreparationGuide = ({ bookedLocationDetails }) => {
           <div className='space-y-8'>
             {sections.map((section) => (
               <div key={section.title}>
-                <h2 className='text-2xl font-serif text-text-main mb-2'>
+                <h2 className='text-2xl font-display text-text-main mb-3'>
                   {section.title}
                 </h2>
                 <ul className='space-y-3'>
                   {section.items.map((item) => (
                     <li key={item} className='flex items-start'>
-                      <CheckIcon className='h-6 w-6 text-primary mr-3 flex-shrink-0' />
-                      <span className='text-text-main/80'>{item}</span>
+                      <CheckIcon className='h-6 w-6 text-accent mr-3 flex-shrink-0' />
+                      <span className='text-text-muted'>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -74,37 +69,29 @@ const PreparationGuide = ({ bookedLocationDetails }) => {
 
           {/* Right Column - Additional Info / Contact */}
           <div className='space-y-8'>
-            <div className='border-l-4 border-primary pl-4'>
-              <h2 className='text-2xl font-serif text-text-main mb-2'>
-                Got Questions?
+            <div className='border-l-4 border-primary pl-6 space-y-4'>
+              <h2 className='text-2xl font-display text-text-main'>
+                Need Assistance?
               </h2>
-              <p className='text-lg text-text-main/80 mb-2'>
-                If you’re unsure about anything at all, don’t hesitate to reach out to us directly. We’re here to help make your tattoo experience as comfortable and clear as possible.
+              <p className='text-lg text-text-muted leading-relaxed'>
+                If you have questions about custom integrations or specific security standard audits (like SOC 2, HIPAA) prior to the call, reach out to our engineering team.
               </p>
-              <p className='text-xl font-bold text-primary'>
-                Call us: <a href={`tel:${contactPhoneNumber}`} className='hover:underline'>{contactPhoneNumber}</a>
+              <p className='text-xl font-bold text-primary font-display'>
+                Email Support: <a href='mailto:info@yobix.in' className='hover:underline'>info@yobix.in</a>
               </p>
               {bookedLocationDetails && bookedLocationDetails.address && (
-                <p className='text-lg mt-2'>
-                  <span className='font-semibold text-primary'>Location:</span> {bookedLocationDetails.locationName || 'Our Studio'}
+                <p className='text-base text-text-muted mt-4'>
+                  <span className='font-semibold text-primary font-display'>Selected Center:</span> {bookedLocationDetails.locationName || 'Hub Office'}
                   <br />
-                  <span className='font-semibold text-primary'>Address:</span> {bookedLocationDetails.address}
-                  <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${bookedLocationDetails.locationName}, ${bookedLocationDetails.address}`)}`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-blue-400 hover:underline ml-2'
-                  >
-                    (Get Directions)
-                  </a>
+                  <span className='font-semibold text-primary font-display'>Address:</span> {bookedLocationDetails.address}
                 </p>
               )}
             </div>
 
-            <div className='bg-secondary p-6 rounded-lg'>
-                <h3 className='text-xl font-serif text-text-main mb-2'>Remember:</h3>
-                <p className='text-text-main/80'>
-                    A good tattoo starts with good preparation. We look forward to seeing you!
+            <div className='bg-secondary/40 border border-white/5 p-6 rounded-2xl'>
+                <h3 className='text-xl font-display text-text-main mb-2'>Quick Tip:</h3>
+                <p className='text-text-muted leading-relaxed'>
+                    A typical setup demo takes 25 minutes. Have your developer console or warehouse schema accessible if you want to test our live database connectors.
                 </p>
             </div>
           </div>

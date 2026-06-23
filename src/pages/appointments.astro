@@ -3,15 +3,12 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import BookingIsland from '../components/BookingIsland';
 
-const title = "Book Your Tattoo Appointment | Gunpoint Tattoo";
-const description = "Schedule your next tattoo appointment with Gunpoint Tattoo. Choose your service, design context, and studio location.";
-const ogTitle = "Book Your Tattoo Appointment | Gunpoint Tattoo";
-const ogUrl = "https://gunpointtattoostudio.com/appointments";
+const title = "Schedule a Yobix Demo & Product Tour";
+const description = "Schedule your next product tour or architecture demo with Yobix. Choose your BI solutions, scale size, and connecting region.";
+const ogTitle = "Schedule a Yobix Demo & Product Tour";
+const ogUrl = "https://yobix.in/appointments";
 ---
 
 <MainLayout title={title} description={description} ogTitle={ogTitle} ogUrl={ogUrl}>
-    {/* We use client:load because the entire booking flow
-      and the global loader need to be ready immediately.
-    */}
     <BookingIsland client:only="react" />
 </MainLayout>
