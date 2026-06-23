@@ -1,0 +1,91 @@
+---
+// src/layouts/MainLayout.astro
+import Wrapper from '../components/Wrapper.astro';
+import Schema from '../components/Schema.astro';
+import GlobalLoader from '../components/GlobalLoader'; // Import GlobalLoader
+import '../styles/global.css'
+
+const {
+    title,
+    fullWidth = false,
+    description = "Gunpoint Tattoo Studio - Premium Artistry. Professional Standards.",
+    ogTitle = "Gunpoint Tattoo Studio",
+    ogDescription = "Gunpoint Tattoo Studio - Premium Artistry. Professional Standards.",
+    ogUrl = "https://gunpointtattoostudio.com",
+    ogImage = "https://gunpointtattoostudio.com/logo.webp", // Default image
+    twitterCard = "summary_large_image",
+    twitterTitle = ogTitle,
+    twitterDescription = ogDescription,
+    twitterImage = ogImage
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content={description}/>
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="twitter:card" content={twitterCard} />
+    <meta property="twitter:title" content={twitterTitle} />
+    <meta property="twitter:description" content={twitterDescription} />
+    <meta property="twitter:image" content={twitterImage} />
+    <title>{title} | Gunpoint Tattoo Studio</title>
+    <link rel="canonical" href={Astro.url.href} />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <Schema/>
+</head>
+<body class="bg-background text-text-main">
+
+<GlobalLoader client:load /> {/* GlobalLoader integrated here */}
+
+<button
+        id="scroll-to-top"
+        aria-label="Scroll to top"
+        class="fixed bottom-8 right-8 z-[100] bg-primary text-background p-3 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 opacity-0 pointer-events-none hover:scale-110 hover:bg-primary-light focus:outline-none"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+    </svg>
+</button>
+
+<Wrapper fullWidth={fullWidth} currentPath={currentPath}>
+    <slot />
+</Wrapper>
+
+<script>
+    // This function handles the scroll logic
+    const initScrollToTop = () => {
+        const btn = document.getElementById('scroll-to-top');
+
+        if (btn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    btn.classList.remove('opacity-0', 'pointer-events-none');
+                    btn.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                    btn.classList.add('opacity-0', 'pointer-events-none');
+                    btn.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            });
+
+            btn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    };
+
+    // Run on initial load
+    initScrollToTop();
+
+    // If you use View Transitions, re-run the logic on every page swap
+    document.addEventListener('astro:after-swap', initScrollToTop);
+</script>
+</body>
+</html>

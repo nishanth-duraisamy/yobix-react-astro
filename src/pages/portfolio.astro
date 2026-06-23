@@ -1,0 +1,14 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PortfolioContent from '../components/PortfolioContent';
+
+const title = "Portfolio | Gunpoint Tattoo Studio";
+const description = "Explore the artistic excellence of Gunpoint Tattoo Studio. Browse our portfolio of custom designs, fine-line tattoos, cover-ups, and more.";
+const ogTitle = "Our Portfolio | Gunpoint Tattoo Studio";
+const ogDescription = "View the stunning tattoo work from the artists at Gunpoint Tattoo Studio.";
+const ogUrl = "https://gunpointtattoostudio.com/portfolio";
+---
+
+<MainLayout title={title} description={description} ogTitle={ogTitle} ogDescription={ogDescription} ogUrl={ogUrl}>
+    <PortfolioContent client:load />
+</MainLayout>
