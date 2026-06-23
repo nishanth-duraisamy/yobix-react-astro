@@ -42,12 +42,12 @@ const Contact = () => {
             <div className='flex items-center space-x-3'>
               <EnvelopeIcon className='h-6 w-6 text-primary' />
               <a
-                href='mailto:art@gunpointtattoostudio.com'
+                href='mailto:info@yobix.in'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='hover:text-primary-light'
               >
-                art@gunpointtattoostudio.com
+                info@yobix.in
               </a>
             </div>
           </div>
