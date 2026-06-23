@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { useStore } from '@nanostores/react';
 import { isGlobalLoading } from '../store/loaderStore';
 
 const GlobalLoader = () => {
   const $isGlobalLoading = useStore(isGlobalLoading);
 
-  const [text, setText] = useState(
-    `Analyzing cluster nodes & fetching demo slots...`
-  );
+  const text = `Analyzing cluster nodes & fetching demo slots...`;
 
   if (!$isGlobalLoading) {
     return null;
