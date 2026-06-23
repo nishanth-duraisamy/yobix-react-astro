@@ -28,7 +28,7 @@ const HeroSection = () => {
                 <div className='pt-6'>
                     <a
                         href='/appointments'
-                        className='w-full sm:w-auto inline-flex justify-center items-center px-10 py-4.5 border border-transparent text-base font-bold rounded-xl text-text-main bg-primary hover:bg-primary-light transition-all duration-200 shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:scale-[1.02]'
+                        className='w-full sm:w-auto inline-flex justify-center items-center px-10 py-4.5 border border-transparent text-base font-bold rounded-xl text-white bg-primary hover:bg-primary-light transition-all duration-200 shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:scale-[1.02]'
                     >
                         Start Business Health Check
                     </a>

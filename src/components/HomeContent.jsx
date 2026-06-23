@@ -210,7 +210,7 @@ const HomeContent = () => {
             <div className='pt-4 border-t border-white/5 text-center'>
               <a
                 href='/appointments'
-                className='inline-flex justify-center items-center px-6 py-3 border border-transparent text-sm font-semibold rounded-xl text-text-main bg-primary hover:bg-primary-light transition-all duration-200'
+                className='inline-flex justify-center items-center px-6 py-3 border border-transparent text-sm font-semibold rounded-xl text-white bg-primary hover:bg-primary-light transition-all duration-200'
               >
                 Assess Your Matrix
               </a>
@@ -230,7 +230,7 @@ const HomeContent = () => {
         <div className='pt-4'>
           <a
             href='/appointments'
-            className='inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-sm font-bold rounded-xl text-text-main bg-primary hover:bg-primary-light transition-all duration-200 shadow-lg shadow-primary/10'
+            className='inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-sm font-bold rounded-xl text-white bg-primary hover:bg-primary-light transition-all duration-200 shadow-lg shadow-primary/10'
           >
             Take Free Assessment
           </a>

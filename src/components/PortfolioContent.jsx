@@ -96,7 +96,7 @@ const PortfolioContent = () => {
           <div className='flex flex-col sm:flex-row justify-center gap-4'>
             <a
               href='/appointments'
-              className='bg-primary text-text-main hover:bg-primary-light font-semibold py-3 px-8 rounded-xl transition duration-300 shadow-lg hover:shadow-primary/20'
+              className='bg-primary text-white hover:bg-primary-light font-semibold py-3 px-8 rounded-xl transition duration-300 shadow-lg hover:shadow-primary/20'
             >
               Start Growth Check
             </a>

@@ -51,15 +51,12 @@ export default function Navbar({ currentPath }) {
                     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
                         <div className='flex h-16 items-center justify-between'>
                             <div className='flex shrink-0 items-center'>
-                                <a href='/' className='flex items-center space-x-3'>
+                                <a href='/' className='flex items-center'>
                                     <img
                                         alt='Yobix Logo'
                                         src='/logo.webp'
                                         className='h-9 w-auto rounded-lg'
                                     />
-                                    <span className='text-2xl font-bold font-display text-text-main tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>
-                                        Yobix
-                                    </span>
                                 </a>
                             </div>
                             

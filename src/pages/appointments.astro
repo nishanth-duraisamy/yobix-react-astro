@@ -9,6 +9,8 @@ const ogTitle = "Schedule a Yobix Demo & Product Tour";
 const ogUrl = "https://yobix.in/appointments";
 ---
 
-<MainLayout title={title} description={description} ogTitle={ogTitle} ogUrl={ogUrl}>
-    <BookingIsland client:only="react" />
+<MainLayout title={title} description={description} fullWidth={true} ogTitle={ogTitle} ogUrl={ogUrl}>
+    <div class="bg-background text-text-main py-12 px-4 sm:px-6 lg:px-8">
+        <BookingIsland client:only="react" />
+    </div>
 </MainLayout>

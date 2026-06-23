@@ -155,18 +155,17 @@ const BookingIsland = () => {
 
   return (
     <div className='w-full max-w-4xl mx-auto px-4 py-8 bg-secondary/25 border border-white/5 rounded-3xl shadow-2xl backdrop-blur-md animate-fade-in'>
-      {/* Steps Progress Indicator */}
       {step <= 4 && (
         <div className='flex justify-between items-center mb-10 max-w-xs mx-auto'>
           {[1, 2, 3, 4].map((s) => (
             <React.Fragment key={s}>
               <div
                 className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
-                  step >= s ? 'bg-primary shadow-lg shadow-primary/20 scale-105' : 'bg-white/10'
+                  step >= s ? 'bg-primary shadow-lg shadow-primary/20 scale-105' : 'bg-text-muted/30'
                 }`}
               ></div>
               {s < 4 && (
-                <div className={`flex-1 h-[2px] mx-2 ${step > s ? 'bg-primary/50' : 'bg-white/5'}`}></div>
+                <div className={`flex-1 h-[2px] mx-2 ${step > s ? 'bg-primary/50' : 'bg-text-muted/15'}`}></div>
               )}
             </React.Fragment>
           ))}
@@ -190,10 +189,10 @@ const BookingIsland = () => {
                   setIndustry(ind);
                   handleNext();
                 }}
-                className={`p-4 text-sm font-medium rounded-xl border transition-all duration-200 text-center ${
+                className={`p-4 text-sm font-medium rounded-xl border transition-all duration-200 text-center cursor-pointer hover:scale-[1.02] ${
                   industry === ind 
-                    ? 'bg-primary border-primary text-text-main shadow-lg shadow-primary/20' 
-                    : 'bg-background/40 border-white/5 hover:border-white/20 text-text-muted hover:text-text-main'
+                    ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20 scale-105' 
+                    : 'bg-background/40 border-white/5 hover:border-primary/20 hover:bg-secondary/60 text-text-muted hover:text-text-main shadow-md hover:shadow-lg'
                 }`}
               >
                 {ind}
@@ -220,10 +219,10 @@ const BookingIsland = () => {
                   setChallenge(ch.value);
                   handleNext();
                 }}
-                className={`p-5 text-base font-semibold rounded-2xl border transition-all duration-200 text-left flex items-center justify-between ${
+                className={`p-5 text-base font-semibold rounded-2xl border transition-all duration-200 text-left flex items-center justify-between cursor-pointer hover:scale-[1.02] ${
                   challenge === ch.value
-                    ? 'bg-primary border-primary text-text-main shadow-lg'
-                    : 'bg-background/40 border-white/5 hover:border-white/20 text-text-muted hover:text-text-main'
+                    ? 'bg-primary border-primary text-white shadow-lg scale-105'
+                    : 'bg-background/40 border-white/5 hover:border-primary/20 hover:bg-secondary/60 text-text-muted hover:text-text-main'
                 }`}
               >
                 <span>{ch.label}</span>
@@ -234,7 +233,7 @@ const BookingIsland = () => {
           <div className='pt-6'>
             <button
               onClick={handleBack}
-              className='text-xs text-text-muted hover:text-text-main flex items-center mx-auto'
+              className='text-xs text-text-muted hover:text-text-main flex items-center mx-auto cursor-pointer'
             >
               <ChevronLeftIcon className='h-4 w-4 mr-1' /> Go Back
             </button>
@@ -279,15 +278,15 @@ const BookingIsland = () => {
                 <div
                   key={q.id}
                   onClick={() => toggleAnswer(q.id)}
-                  className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 flex items-center justify-between ${
+                  className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 flex items-center justify-between hover:scale-[1.01] ${
                     answers[q.id]
-                      ? 'bg-primary/10 border-primary/40 text-text-main'
-                      : 'bg-background/20 border-white/5 hover:border-white/10 text-text-muted'
+                      ? 'bg-primary/10 border-primary/45 text-text-main shadow-md'
+                      : 'bg-background/20 border-white/5 hover:border-primary/20 hover:bg-secondary/40 text-text-muted'
                   }`}
                 >
                   <span className='text-sm font-medium pr-4'>{q.text}</span>
                   <div className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
-                    answers[q.id] ? 'bg-primary border-primary text-text-main' : 'border-white/20'
+                    answers[q.id] ? 'bg-primary border-primary text-white' : 'border-white/20'
                   }`}>
                     {answers[q.id] && (
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
@@ -301,13 +300,13 @@ const BookingIsland = () => {
               <div className='pt-6 flex justify-between items-center'>
                 <button
                   onClick={handleBack}
-                  className='text-xs text-text-muted hover:text-text-main flex items-center'
+                  className='text-xs text-text-muted hover:text-text-main flex items-center cursor-pointer'
                 >
                   <ChevronLeftIcon className='h-4 w-4 mr-1' /> Go Back
                 </button>
                 <button
                   onClick={handleNext}
-                  className='bg-primary text-text-main hover:bg-primary-light font-bold px-6 py-2.5 rounded-xl transition duration-200'
+                  className='bg-primary text-white hover:bg-primary-light font-bold px-6 py-2.5 rounded-xl transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95 shadow-lg hover:shadow-primary/30'
                 >
                   Diagnose &rarr;
                 </button>
@@ -364,13 +363,13 @@ const BookingIsland = () => {
           <div className='pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4'>
             <button
               onClick={handleReset}
-              className='text-xs text-text-muted hover:text-text-main flex items-center transition-colors'
+              className='text-xs text-text-muted hover:text-text-main flex items-center transition-colors cursor-pointer'
             >
               <ArrowPathIcon className='h-4 w-4 mr-1.5' /> Run Diagnostics Again
             </button>
             <a
               href='/contact'
-              className='w-full sm:w-auto inline-flex justify-center items-center bg-primary text-text-main hover:bg-primary-light font-bold px-8 py-3.5 rounded-xl transition duration-200 text-sm'
+              className='w-full sm:w-auto inline-flex justify-center items-center bg-primary text-white hover:bg-primary-light font-bold px-8 py-3.5 rounded-xl transition-all duration-200 text-sm cursor-pointer hover:scale-105 active:scale-95 shadow-lg hover:shadow-primary/30'
             >
               Consult Yobix Architects
             </a>
